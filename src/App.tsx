@@ -8,7 +8,24 @@ export function App() {
 		<div>
 			<Header />
 			<main className={styles.wrapper}>
-				<h1>Hello world</h1>
+				<form className={styles.form}>
+					<input
+						className={styles.input}
+						type='text'
+						placeholder='Adicione uma nova tarefa'
+					/>
+					<button type='submit'>Criar</button>
+				</form>
+				<div>
+					<div>
+						<strong>Tarefas criadas</strong>
+						<span>5</span>
+					</div>
+					<div>
+						<strong>Concluídas</strong>
+						<span>2 de 5</span>
+					</div>
+				</div>
 			</main>
 		</div>
 	);
