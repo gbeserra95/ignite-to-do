@@ -1,0 +1,5 @@
+.wrapper {
+	width: min(46rem, 100%);
+	margin: 0 auto;
+	text-align: center;
+}
