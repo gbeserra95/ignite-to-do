@@ -1,4 +1,5 @@
 import { Header } from './components/Header';
+import { EmptyList } from './components/EmptyList';
 
 import { PlusCircle } from 'phosphor-react';
 
@@ -31,6 +32,7 @@ export function App() {
 						<span>2 de 5</span>
 					</div>
 				</div>
+				<EmptyList />
 			</main>
 		</div>
 	);
