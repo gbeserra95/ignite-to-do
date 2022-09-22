@@ -16,7 +16,7 @@
 	height: 24px;
 	color: var(--gray-100);
 	background: transparent;
-	border: 3px solid var(--blue);
+	border: 2px solid var(--blue);
 	border-radius: 50%;
 	transition: 0.1s;
 	cursor: pointer;
@@ -38,4 +38,35 @@
 
 .checkbox:checked:hover {
 	background-color: var(--purple);
+}
+
+.item span {
+	width: min(39.5rem, 100%);
+	height: 2.5rem;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	color: var(--gray-100);
+	text-align: left;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.trash {
+	width: 1.5rem;
+	height: 1.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--gray-300);
+	border-radius: 4px;
+	cursor: pointer;
+	transition: 0.1s;
+}
+
+.trash:hover {
+	color: var(--danger);
+	background: var(--gray-400);
 }

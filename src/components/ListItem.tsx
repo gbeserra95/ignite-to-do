@@ -11,8 +11,13 @@ export function ListItem() {
 	return (
 		<li className={styles.item}>
 			<input className={styles.checkbox} type='checkbox' />
-			<span>Hello world</span>
-			<Trash size={24} />
+			<span>
+				Integer urna interdum massa libero auctor neque turpis turpis
+				semper. Duis vel sed fames integer.
+			</span>
+			<div className={styles.trash}>
+				<Trash size={19} />
+			</div>
 		</li>
 	);
 }
