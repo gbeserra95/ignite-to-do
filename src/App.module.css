@@ -78,10 +78,13 @@
 }
 
 .createdTasks span {
-	padding: 0.2rem 0.5rem;
+	width: 1.5rem;
+	height: 1.25rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	background: var(--gray-400);
-	font-size: 0.75;
-	line-height: 1rem;
+	font-size: 0.75rem;
 	border-radius: 999px;
 }
 
@@ -90,10 +93,13 @@
 }
 
 .completedTasks span {
-	padding: 0.2rem 0.5rem;
+	width: 3.25rem;
+	height: 1.25rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	background: var(--gray-400);
-	font-size: 0.75;
-	line-height: 1rem;
+	font-size: 0.75rem;
 	border-radius: 999px;
 }
 
@@ -103,4 +109,18 @@
 	flex-direction: column;
 	gap: 0.75rem;
 	list-style: none;
+}
+
+@media (max-width: 768px) {
+	html {
+		font-size: 87.5%;
+	}
+
+	.wrapper {
+		padding: 0 1rem;
+	}
+
+	input[type='checkbox'] {
+		height: 1.15rem;
+	}
 }
