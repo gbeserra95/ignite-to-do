@@ -5,7 +5,7 @@ import { Header } from './components/Header';
 import { EmptyList } from './components/EmptyList';
 import { ListItem } from './components/ListItem';
 
-import { PlusCircle } from 'phosphor-react';
+import { PlusCircle, TrashSimple } from 'phosphor-react';
 
 import './global.css';
 import styles from './App.module.css';
@@ -21,6 +21,7 @@ export function App() {
 
 	const isTasksEmpty = tasks.length === 0;
 	const isNewTaskEmpty = newTask.trim() === '';
+	const completedTasks = tasks.filter(task => task.completed === true).length;
 
 	function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
 		setNewTask(event.target.value);
@@ -46,6 +47,20 @@ export function App() {
 		setTasks(updatedTasks);
 	}
 
+	function handleCheckTask(id: string) {
+		const updatedTasks = tasks.map(task => {
+			if (task.id === id)
+				return {
+					id: task.id,
+					completed: !task.completed,
+					content: task.content,
+				};
+			return task;
+		});
+
+		setTasks(updatedTasks);
+	}
+
 	return (
 		<div>
 			<Header />
@@ -67,11 +82,13 @@ export function App() {
 				<div className={styles.infoWrapper}>
 					<div className={styles.createdTasks}>
 						<strong>Tarefas criadas</strong>
-						<span>5</span>
+						<span>{tasks.length}</span>
 					</div>
 					<div className={styles.completedTasks}>
 						<strong>Concluídas</strong>
-						<span>2 de 5</span>
+						<span>
+							{completedTasks} de {tasks.length}
+						</span>
 					</div>
 				</div>
 
@@ -84,6 +101,7 @@ export function App() {
 								key={task.id}
 								task={task}
 								onDelete={handleDeleteTask}
+								onCheck={handleCheckTask}
 							/>
 						))}
 					</ul>
